@@ -1,7 +1,13 @@
 function calculateTotalPrice (array, prop) {
   'use strict';
-  // Write code under this line
-  
+  let total = 0;
+
+  for (const item of array) {
+    if (item.name === prop) {
+      total += item.price * item.quantity;
+    }
+  }
+  return total;
 }
 
 // Объекты и ожидаемый результат
@@ -15,14 +21,19 @@ const products = [
     { name: 'Захват', price: 1200, quantity: 2 }
 ]; 
 
-//console.log(calculateTotalPrice(products, 'Радар'));  
+console.log(calculateTotalPrice(products, 'Радар'));  
 // 9080
 
-//console.log(calculateTotalPrice(products, 'Сканер')); 
+console.log(calculateTotalPrice(products, 'Сканер')); 
 // 10200
 
-//console.log(calculateTotalPrice(products, 'Захват'));
+console.log(calculateTotalPrice(products, 'Захват'));
 // 2400
 
-//console.log(calculateTotalPrice(products, 'Дроид')); 
+console.log(calculateTotalPrice(products, 'Дроид')); 
 // 2800
+
+
+// Условие:
+
+// Напиши функцию calculateTotalPrice(allProdcuts, productName), которая получает массив объектов и имя продукта (значение свойства name). Возвращает общую стоимость продукта (цена умноженная на количество).
